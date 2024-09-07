@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnovativeBeyond - Home</title>
+    <link rel="stylesheet" href="style.css"> <!-- Home page styles -->
+</head>
+<body class="home-page"> <!-- Add class to body for home page styles -->
+    <nav>
+        <a href="index.html" id="home-btn">Home</a>
+        <a href="./navigation/Submit Idea.html" id="submit-btn">Submit Idea</a>
+        <a href="./navigation/Marketplace.html" id="marketplace-btn">Marketplace</a>
+        <a href="./navigation/How It Works.html" id="howitworks-btn">How It Works</a>
+        <a href="./navigation/Contact us.html" id="contact-btn">Contact us</a>
+        <a href="./navigation/Login.html" id="login-btn">Login</a>
+    </nav>
+
+    <section id="content"> 
+        <h1>Welcome <br/>To <br />InnovativeBeyond</h1>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get the current page URL
+            const currentPage = window.location.pathname.split('/').pop();
+
+            // Get all navigation links
+            const navLinks = document.querySelectorAll('nav a');
+
+            // Loop through each link
+            navLinks.forEach(link => {
+                // Get the href attribute of the link
+                const href = link.getAttribute('href').split('/').pop();
+                
+                // Check if the href matches the current page
+                if (currentPage === href) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
